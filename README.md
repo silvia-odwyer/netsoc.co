@@ -6,4 +6,4 @@
 
 I woulda forked the original, but the repo was empty.
 
-After seeing that the upstream repository was empty for quite some time, I decided to fork it, and get something done.
+https://silvia-odwyer.github.io/netsoc.co/
