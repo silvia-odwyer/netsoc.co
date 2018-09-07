@@ -2,7 +2,7 @@
 
 `>repo empty`
 
-`>Silvia makes a shit website with FukdUpDesign.`
+`>Silvia makes a shit website with fukd up design.`
 
 I woulda forked the original, but the repo was empty.
 
