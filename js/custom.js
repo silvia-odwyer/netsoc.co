@@ -3,9 +3,7 @@
 /* ========================================================================= */
 
 jQuery(window).load(function(){
-
 	$("#preloader").fadeOut("slow");
-
 });
 
 
@@ -22,12 +20,6 @@ $(document).ready(function(){
 		currentClass: 'current',
 		easing: 'easeInOutExpo',
 		updateHash: true,
-		beforeStart: function() {
-			console.log('begin scrolling');
-		},
-		onComplete: function() {
-			console.log('done scrolling');
-		}
 	});
 	
     $(window).scroll(function () {
@@ -42,13 +34,11 @@ $(document).ready(function(){
 	/*	Fix Slider Height
 	/* ========================================================================= */	
 
-	var slideHeight = $(window).height();
-	
-	$('#slider, .carousel.slide, .carousel-inner, .carousel-inner .item').css('height',slideHeight);
+	$('#slider, .carousel.slide, .carousel-inner, .carousel-inner .item').css('height', $(window).height());
 
-	$(window).resize(function(){'use strict',
+	/* $(window).resize(function(){'use strict',
 		$('#slider, .carousel.slide, .carousel-inner, .carousel-inner .item').css('height',slideHeight);
-	});
+	}); */
 	
 	
 	/* ========================================================================= */
@@ -76,8 +66,8 @@ $(document).ready(function(){
 	/* ========================================================================= */
 	/*	Parallax
 	/* ========================================================================= */	
-	
-	$('#facts').parallax("50%", 0.3);
+    
+    $('#facts').parallax({imageSrc: 'img/works/mloc.jpg'});
 	
 	/* ========================================================================= */
 	/*	Timer count
@@ -119,7 +109,7 @@ $(document).ready(function(){
 
 // ==========  START GOOGLE MAP ========== //
 function initialize() {
-    var myLatLng = new google.maps.LatLng(51.8985, -8.4756);
+    var myLatLng = new google.maps.LatLng(51.892364, -8.490118);
 
     var mapOptions = {
         zoom: 14,
@@ -138,13 +128,12 @@ function initialize() {
     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
 
-    var marker = new google.maps.Marker({
+    new google.maps.Marker({
         position: myLatLng,
         map: map,
         icon: 'img/location-icon.png',
         title: '',
     });
-
 }
 
 google.maps.event.addDomListener(window, "load", initialize);
